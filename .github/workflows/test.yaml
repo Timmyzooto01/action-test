@@ -1,4 +1,4 @@
-name: List Docker Images
+name: Docker Actions
 
 on: [push]
 
@@ -15,3 +15,13 @@ jobs:
 
     - name: List Docker Images
       run: docker image ls
+
+  another_job:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Execute Some Other Actions
+      run: echo "This is another job"
